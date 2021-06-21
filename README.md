@@ -45,13 +45,13 @@ npm run build
 
 ## Customization Checklist
 
-- [] Update the `name` field in `package.json`.
-- [] Update `<Head>` contents in `layout.tsx`.
-- [] Update names and colors in `site.webmanifest`.
-- [] Replace `favicon.ico` etc.
-- [] Update `.env`.
-- [] Remove if not needed: `gray-matter`, `remark`, `remark-html`, `date-fns`
-- [] Replace the contents of `README.md`.
+- [ ] Update the `name` field in `package.json`.
+- [ ] Update `<Head>` contents in `layout.tsx`.
+- [ ] Update names and colors in `site.webmanifest`.
+- [ ] Replace `favicon.ico` etc.
+- [ ] Update `.env`.
+- [ ] Remove if not needed: `gray-matter`, `remark`, `remark-html`, `date-fns`
+- [ ] Replace the contents of `README.md`.
 
 ## Making Changes
 
