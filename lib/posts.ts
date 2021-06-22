@@ -14,44 +14,27 @@ export interface PostData {
 }
 
 export async function getSortedPostsData(): Promise<PostData[]> {
-  // Get file names under /posts
-  const fileNames = fs.readdirSync(postsDirectory);
+  const fileNames: string[] = fs.readdirSync(postsDirectory);
+
   const allPostsData: Promise<PostData>[] = fileNames.map(async (fileName) => {
-    // Remove ".md" from file name to get id
     const id = fileName.replace(/\.md$/, "");
     return await getPostData(id);
   });
 
   return Promise.all(allPostsData).then((allPostsData) => {
-    // Sort posts by date
     return allPostsData.sort(({ date: a }, { date: b }) => {
       if (a < b) {
         return 1;
       } else if (a > b) {
         return -1;
-      } else {
-        return 0;
       }
+      return 0;
     });
   });
 }
 
 export function getAllPostIds(): Array<{ params: { id: string } }> {
-  const fileNames = fs.readdirSync(postsDirectory);
-
-  // Returns an array that looks like this:
-  // [
-  //   {
-  //     params: {
-  //       id: 'ssg-ssr'
-  //     }
-  //   },
-  //   {
-  //     params: {
-  //       id: 'pre-rendering'
-  //     }
-  //   }
-  // ]
+  const fileNames: string[] = fs.readdirSync(postsDirectory);
   return fileNames.map((fileName) => {
     return {
       params: {
@@ -72,7 +55,6 @@ export async function getPostData(id: string): Promise<PostData> {
     await remark().use(html).process(matterResult.content)
   ).toString();
 
-  // Combine the data with the id
   return {
     id,
     content: contentHtml,

@@ -11,6 +11,7 @@ const config = {
   future: undefined,
   experimental: undefined,
   webpackDevMiddleware: (config) => {
+    // Necessary for HMR when running in a container.
     if (process.env.DOCKER) {
       config.watchOptions = {
         poll: 300,

@@ -1,9 +1,10 @@
 import Head from "next/head";
 import Link from "next/link";
 import { GetStaticProps } from "next";
-import Layout, { siteTitle } from "../components/layout";
+import Layout from "../components/layout";
 import Date from "../components/date";
 import { getSortedPostsData, PostData } from "../lib/posts";
+import { appName } from "../lib/config";
 import utilStyles from "../styles/utils.module.scss";
 
 interface HomeProps {
@@ -11,11 +12,11 @@ interface HomeProps {
   allPosts: PostData[];
 }
 
-export default function Home({ greeting, allPosts }: HomeProps) {
+export default function Home({ greeting, allPosts }: HomeProps): JSX.Element {
   return (
     <Layout home>
       <Head>
-        <title>{siteTitle}</title>
+        <title>{appName}</title>
       </Head>
       <section className={utilStyles.headingMd}>
         <p>{greeting}</p>
@@ -57,6 +58,5 @@ export const getStaticProps: GetStaticProps<HomeProps> = async () => {
   const greeting = "Hey 👋";
   const allPosts = await getSortedPostsData();
 
-  // The value of the 'props' key is passed to the component.
   return { props: { greeting, allPosts } };
 };
