@@ -55,7 +55,9 @@ Run through this checklist to customise the application for your needs:
 - [ ] Replace `public/favicon.ico` and `public/icon.png` etc.
 - [ ] Update the environment variables in `.env.{development,production}`.
 - [ ] Remove unnecessary dependencies from `package.json` e.g. `gray-matter`, `remark`, `remark-html`, `date-fns`
-- [ ] Update the contents of this file!
+- [ ] Change the license in `package.json` and `LICENSE` if needed.
+- [ ] Update the contents of this file.
+- [ ] Start working on your application!
 
 ## Learn More
 
