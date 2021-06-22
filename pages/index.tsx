@@ -4,7 +4,6 @@ import { GetStaticProps } from "next";
 import Layout, { siteTitle } from "../components/layout";
 import Date from "../components/date";
 import { getSortedPostsData, PostData } from "../lib/posts";
-import { server } from "../lib/config";
 import utilStyles from "../styles/utils.module.scss";
 
 interface HomeProps {
