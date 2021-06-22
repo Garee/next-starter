@@ -1,9 +1,17 @@
 {
   "name": "next-starter",
-  "version": "0.1.0",
+  "description": "A starter template for Next.js web applications.",
+  "version": "0.0.0",
   "private": true,
   "author": "Gary Blackwood <gary@garyblackwood.co.uk",
+  "homepage": "https://github.com/Garee/next-starter",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Garee/next-starter"
+  },
+  "bugs": "https://github.com/Garee/next-starter/issues",
   "license": "MIT",
+  "keywords": [],
   "scripts": {
     "dev": "next dev",
     "build": "next build",

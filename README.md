@@ -48,13 +48,14 @@ npm run build
 
 Run through this checklist to customise the application for your needs:
 
-- [ ] Update the `name` field in `package.json`.
-- [ ] Update `<Head>` contents in `layout.tsx`.
-- [ ] Update names and colors in `site.webmanifest`.
-- [ ] Replace `favicon.ico` etc.
-- [ ] Update `.env`.
-- [ ] Remove if not needed: `gray-matter`, `remark`, `remark-html`, `date-fns`
-- [ ] Replace the contents of `README.md`.
+- [ ] Update the `name`, `description`, `homepage`, `repository` and `bugs` fields in `package.json`.
+- [ ] Update site metadata within the `<Head>` component in `components/layout.tsx`.
+- [ ] Update the application configuration in `lib/config.ts`.
+- [ ] Update `name`, `short_name`, `theme_color` and `background_color` in `public/site.webmanifest`.
+- [ ] Replace `public/favicon.ico` and `public/icon.png` etc.
+- [ ] Update the environment variables in `.env.{development,production}`.
+- [ ] Remove unnecessary dependencies from `package.json` e.g. `gray-matter`, `remark`, `remark-html`, `date-fns`
+- [ ] Update the contents of this file!
 
 ## Learn More
 
