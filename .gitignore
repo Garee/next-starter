@@ -39,3 +39,6 @@ public/workbox*
 
 # tsc incremental build output
 tsconfig.tsbuildinfo
+
+# npm pack output
+*.tgz
