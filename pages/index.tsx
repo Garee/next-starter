@@ -20,7 +20,7 @@ export default function Home({ greeting, allPosts }: HomeProps) {
       </Head>
       <section className={utilStyles.headingMd}>
         <p>{greeting}</p>
-        <p>This is a simple starter template for a Next.js web application.</p>
+        <p>This is a simple starter template for a Next.js web application</p>
       </section>
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>Blog</h2>

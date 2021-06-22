@@ -13,7 +13,7 @@ const config = {
   webpackDevMiddleware: (config) => {
     if (process.env.DOCKER) {
       config.watchOptions = {
-        poll: 1000,
+        poll: 300,
         aggregateTimeout: 300,
       };
     }
