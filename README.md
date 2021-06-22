@@ -15,6 +15,7 @@ After bootstrapping, the following was added:
 - A simple example blog application.
 - Custom `404` and `500` error pages.
 - A [development container](https://code.visualstudio.com/docs/remote/create-dev-container).
+- Progress Web App support using [`next-pwa`](https://github.com/shadowwalker/next-pwa).
 
 ## Getting Started
 

@@ -48,10 +48,14 @@ export default function Home({ greeting, allPosts }: HomeProps) {
 // Can only be exported from a page.
 export const getStaticProps: GetStaticProps<HomeProps> = async () => {
   // Get external data from the file system, API, DB etc.
-  const greeting = await fetch(`${server}/api/greeting`)
-    .then((res) => res.json())
-    .then((data) => data.greeting);
 
+  // API route calls cannot be made in getStaticProps as they fail during
+  // production builds.
+  /*const greeting = await fetch(`${server}/api/greeting`)
+    .then((res) => res.json())
+    .then((data) => data.greeting);*/
+
+  const greeting = "Hey 👋";
   const allPosts = await getSortedPostsData();
 
   // The value of the 'props' key is passed to the component.

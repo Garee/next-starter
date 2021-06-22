@@ -1,5 +1,8 @@
 // @ts-check
 
+const withPWA = require("next-pwa");
+const runtimeCaching = require("next-pwa/cache");
+
 /**
  * @type {import('next/dist/next-server/server/config').NextConfig}
  **/
@@ -17,6 +20,11 @@ const config = {
 
     return config;
   },
+  pwa: {
+    dest: "public",
+    disable: process.env.NODE_ENV === "development",
+    runtimeCaching,
+  },
 };
 
-module.exports = config;
+module.exports = withPWA(config);
