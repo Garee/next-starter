@@ -13,7 +13,7 @@
   "license": "MIT",
   "keywords": [],
   "scripts": {
-    "clean": "rm -rf .next",
+    "clean": "rm -rf .next tsconfig.tsbuildinfo",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
