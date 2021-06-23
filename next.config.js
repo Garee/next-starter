@@ -28,6 +28,18 @@ const config = {
     disable: process.env.NODE_ENV === "development",
     runtimeCaching,
   },
+  async rewrites() {
+    return [
+      {
+        source: "/admin",
+        destination: "/admin/index.html",
+      },
+      {
+        source: "/config.yml",
+        destination: "/admin/config.yml",
+      },
+    ];
+  },
 };
 
 module.exports = withPWA(config);

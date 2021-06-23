@@ -11,6 +11,7 @@ export interface PostData {
   date: string;
   title: string;
   content: string;
+  rating: number;
 }
 
 export async function getSortedPostsData(): Promise<PostData[]> {
@@ -55,9 +56,15 @@ export async function getPostData(id: string): Promise<PostData> {
     await remark().use(html).process(matterResult.content)
   ).toString();
 
-  return {
+  const { date, title, rating } = matterResult.data;
+
+  const data: PostData = {
     id,
     content: contentHtml,
-    ...matterResult.data,
-  } as PostData;
+    title,
+    rating,
+    date: date.toISOString(),
+  };
+
+  return data;
 }

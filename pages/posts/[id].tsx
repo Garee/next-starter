@@ -31,6 +31,8 @@ export default function Post({ postData }: PostProps) {
         <Date dateString={postData.date} />
       </small>
       <br />
+      <small>{`⭐`.repeat(postData.rating)}</small>
+      <br />
       <div dangerouslySetInnerHTML={{ __html: postData.content }} />
     </Layout>
   );
@@ -39,7 +41,13 @@ export default function Post({ postData }: PostProps) {
 export const getStaticProps: GetStaticProps<PostProps> = async ({
   params,
 }: GetStaticPropsContext) => {
-  let postData: PostData = { id: "", title: "", date: "", content: "" };
+  let postData: PostData = {
+    id: "",
+    title: "",
+    date: "",
+    content: "",
+    rating: 3,
+  };
 
   if (typeof params?.id === "string") {
     postData = await getPostData(params.id);

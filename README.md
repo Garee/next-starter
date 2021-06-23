@@ -68,6 +68,7 @@ Run through this checklist to customise the application for your needs:
 - [ ] Update the environment variables in `.env.{development,production}`.
 - [ ] Remove unnecessary dependencies from `package.json` e.g. `gray-matter`, `remark`, `remark-html`, `date-fns`
 - [ ] Change the license in `package.json` and `LICENSE` if needed.
+- [ ] Update the CMS configuration in `public/admin/config.yml`.
 - [ ] Update the contents of this file.
 - [ ] Start working on your application!
 

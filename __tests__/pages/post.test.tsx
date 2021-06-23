@@ -9,6 +9,7 @@ describe("postPage", () => {
       date: "2021-01-01",
       title: "Post #1",
       content: "Sample content.",
+      rating: 3,
     };
     const post = <Post postData={postData} />;
     const tree = renderer.create(post).toJSON();

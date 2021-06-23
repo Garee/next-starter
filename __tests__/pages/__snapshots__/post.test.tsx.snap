@@ -109,6 +109,10 @@ exports[`postPage renders correctly 1`] = `
       </time>
     </small>
     <br />
+    <small>
+      ⭐⭐⭐
+    </small>
+    <br />
     <div
       dangerouslySetInnerHTML={
         Object {
