@@ -1,3 +1,5 @@
+import fs from "fs";
+import path from "path";
 import Head from "next/head";
 import Link from "next/link";
 import { GetStaticProps } from "next";
@@ -14,10 +16,15 @@ import utilStyles from "../styles/utils.module.scss";
 
 interface HomeProps {
   greeting: string;
+  description: string;
   allPosts: PostData[];
 }
 
-export default function Home({ greeting, allPosts }: HomeProps): JSX.Element {
+export default function Home({
+  greeting,
+  description,
+  allPosts,
+}: HomeProps): JSX.Element {
   return (
     <Layout home>
       <Head>
@@ -25,7 +32,7 @@ export default function Home({ greeting, allPosts }: HomeProps): JSX.Element {
       </Head>
       <section className={utilStyles.headingMd}>
         <p>{greeting}</p>
-        <p>This is a simple starter template for a Next.js web application</p>
+        <p>{description}</p>
       </section>
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>Blog</h2>
@@ -66,10 +73,15 @@ export const getStaticProps: GetStaticProps<HomeProps> = async () => {
     .then((res) => res.json())
     .then((data) => data.greeting);*/
 
-  const greeting = "Hey 👋";
+  const contentDirectory = path.join(process.cwd(), "content");
+  const about = fs.readFileSync(
+    path.join(contentDirectory, "about.json"),
+    "utf-8"
+  );
+  const { greeting, description } = JSON.parse(about);
   const allPosts = await getSortedPostsData();
 
-  return { props: { greeting, allPosts } };
+  return { props: { greeting, description, allPosts } };
 };
 
 // If a page uses Server-side Rendering, the page HTML is generated on

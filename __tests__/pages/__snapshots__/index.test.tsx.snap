@@ -88,7 +88,7 @@ exports[`indexPage renders correctly 1`] = `
         Hey 👋
       </p>
       <p>
-        This is a simple starter template for a Next.js web application
+        
       </p>
     </section>
     <section

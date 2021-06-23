@@ -12,7 +12,8 @@ describe("indexPage", () => {
       rating: 3,
     },
   ];
-  const index = <Index greeting="Hey 👋" allPosts={allPosts} />;
+
+  const index = <Index greeting="Hey 👋" description="" allPosts={allPosts} />;
 
   it("renders correctly", () => {
     expect.assertions(1);
