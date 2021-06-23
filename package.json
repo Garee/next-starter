@@ -10,21 +10,29 @@
   },
   "bugs": "https://github.com/Garee/next-starter/issues",
   "license": "MIT",
-  "keywords": [],
+  "keywords": [
+    "Next.js",
+    "starter",
+    "template"
+  ],
   "bin": {
     "next-starter": "./package/bin.js"
   },
   "scripts": {
-    "clean": "rm -rf .next tsconfig.tsbuildinfo",
+    "clean": "rm -rf .next coverage",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint && npm run lint-ts && npm run lint-styles",
+    "lint": "npm run lint-next && npm run lint-ts && npm run lint-tests && npm run lint-styles",
+    "lint-next": "next lint",
     "lint-styles": "stylelint **/*.scss",
     "lint-ts": "tsc --noEmit",
+    "lint-tests": "eslint __tests__",
     "format": "prettier --write **/*.{js,json,ts,tsx,scss} !.next !public",
     "prepare": "husky install",
-    "pre-commit": "lint-staged && npm run lint"
+    "pre-commit": "lint-staged && npm run lint",
+    "test": "jest --watch",
+    "test:ci": "jest --ci"
   },
   "dependencies": {
     "classnames": "2.3.1",
@@ -40,14 +48,24 @@
   "devDependencies": {
     "@commitlint/cli": "12.1.4",
     "@commitlint/config-conventional": "12.1.4",
+    "@jest/types": "27.0.2",
+    "@testing-library/jest-dom": "5.14.1",
+    "@testing-library/react": "11.2.7",
     "@types/classnames": "2.3.1",
     "@types/react": "17.0.11",
+    "@types/react-test-renderer": "17.0.1",
+    "babel-jest": "27.0.5",
     "eslint": "7.29.0",
     "eslint-config-next": "11.0.0",
     "eslint-config-prettier": "8.3.0",
+    "eslint-plugin-jest": "24.3.6",
+    "eslint-plugin-testing-library": "4.6.0",
     "husky": "6.0.0",
+    "identity-obj-proxy": "3.0.0",
+    "jest": "27.0.5",
     "lint-staged": "11.0.0",
     "prettier": "2.3.1",
+    "react-test-renderer": "17.0.2",
     "sass": "1.35.1",
     "stylelint": "13.13.1",
     "stylelint-config-recommended-scss": "4.2.0",
@@ -60,6 +78,9 @@
     "*.scss": [
       "prettier --write",
       "stylelint --fix"
+    ],
+    "*.test.{ts,tsx}": [
+      "eslint --fix"
     ]
   }
 }

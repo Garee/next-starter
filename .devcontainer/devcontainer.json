@@ -14,7 +14,8 @@
     "dbaeumer.vscode-eslint",
     "stylelint.vscode-stylelint",
     "esbenp.prettier-vscode",
-    "irongeek.vscode-env"
+    "irongeek.vscode-env",
+    "orta.vscode-jest"
   ],
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
   "forwardPorts": [3000],
