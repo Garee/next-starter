@@ -17,6 +17,7 @@ After bootstrapping, the following was added:
 - A [development container](https://code.visualstudio.com/docs/remote/create-dev-container).
 - Progress Web App support using [`next-pwa`](https://github.com/shadowwalker/next-pwa).
 - [Jest](https://jestjs.io/) and [react-testing-library](https://github.com/testing-library/react-testing-library) for testing.
+- [Travis CI](https://travis-ci.com) configuration.
 
 ## Getting Started
 
