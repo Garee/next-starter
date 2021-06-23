@@ -40,6 +40,12 @@ To perform static analysis:
 npm run lint
 ```
 
+To run tests:
+
+```bash
+npm test
+```
+
 To build for production:
 
 ```bash

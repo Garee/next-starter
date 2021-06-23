@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`IndexPage renders correctly 1`] = `
+exports[`indexPage renders correctly 1`] = `
 <div
   className="container homeContainer"
 >
