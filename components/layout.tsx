@@ -1,4 +1,5 @@
 import Head from "next/head";
+// https://nextjs.org/docs/basic-features/image-optimization#image-component
 import Image from "next/image";
 import Link from "next/link";
 import cn from "classnames";

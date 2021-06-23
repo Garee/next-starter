@@ -10,6 +10,12 @@ import { getAllPostIds, getPostData, PostData } from "../../lib/posts";
 import Date from "../../components/date";
 import utilStyles from "../../styles/utils.module.scss";
 
+// Next.js supports pages with dynamic routes.
+// For example, if you create a file called pages/posts/[id].js,
+// then it will be accessible at posts/1, posts/2, etc.
+//
+// https://nextjs.org/docs/routing/introduction#dynamic-route-segments
+
 interface PostProps {
   postData: PostData;
 }
@@ -46,12 +52,13 @@ export const getStaticProps: GetStaticProps<PostProps> = async ({
   };
 };
 
+// The page paths depend on external data.
 export const getStaticPaths: GetStaticPaths = async (
   _context: GetStaticPathsContext
 ) => {
   const paths = getAllPostIds();
   return {
-    paths,
-    fallback: false,
+    paths, // Pre-render these at build-time.
+    fallback: false, // Other routes should 404.
   };
 };

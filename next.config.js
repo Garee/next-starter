@@ -8,6 +8,7 @@ const runtimeCaching = require("next-pwa/cache");
  **/
 const config = {
   reactStrictMode: true,
+  productionBrowserSourceMaps: false,
   future: undefined,
   experimental: undefined,
   webpackDevMiddleware: (config) => {
@@ -22,6 +23,7 @@ const config = {
     return config;
   },
   pwa: {
+    // https://nextjs.org/docs/basic-features/static-file-serving
     dest: "public",
     disable: process.env.NODE_ENV === "development",
     runtimeCaching,

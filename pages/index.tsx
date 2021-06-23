@@ -7,6 +7,11 @@ import { getSortedPostsData, PostData } from "../lib/posts";
 import { appName } from "../lib/config";
 import utilStyles from "../styles/utils.module.scss";
 
+// A page is a React Component exported from a .js, .jsx, .ts, or .tsx file
+// in the pages directory.
+//
+// Pages are associated with a route based on their file name.
+
 interface HomeProps {
   greeting: string;
   allPosts: PostData[];
@@ -42,10 +47,16 @@ export default function Home({ greeting, allPosts }: HomeProps): JSX.Element {
   );
 }
 
+// By default, Next.js pre-renders every page.
+// Next.js has two forms of pre-rendering:
+// 1. Static Generation (Recommended): The HTML is generated at build time
+// and will be reused on each request.
+// 2. Server-side Rendering: The HTML is generated on each request.
+
+// The page content depends on external data.
 // Runs at build time in production.
 // Runs on each request in development mode.
 // Only runs server-side.
-// Can only be exported from a page.
 export const getStaticProps: GetStaticProps<HomeProps> = async () => {
   // Get external data from the file system, API, DB etc.
 
@@ -60,3 +71,12 @@ export const getStaticProps: GetStaticProps<HomeProps> = async () => {
 
   return { props: { greeting, allPosts } };
 };
+
+// If a page uses Server-side Rendering, the page HTML is generated on
+// each request.
+/* export async function getServerSideProps() {
+  // Fetch data from external API
+  const res = await fetch(`https://.../data`)
+  const data = await res.json()
+  return { props: { data } }
+} */
