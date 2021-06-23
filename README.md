@@ -21,9 +21,11 @@ After bootstrapping, the following was added:
 
 ## Getting Started
 
-First, install the dependencies:
+First, clone and install the dependencies:
 
 ```bash
+npx @garyblackwood/next-starter my-app
+cd my-app
 npm run install
 ```
 
