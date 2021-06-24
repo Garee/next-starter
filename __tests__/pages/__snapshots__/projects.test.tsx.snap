@@ -107,7 +107,9 @@ exports[`projects page renders correctly 1`] = `
       }
     />
     <br />
-    <ul />
+    <ul
+      className="list"
+    />
   </main>
   <div
     className="backToHome"

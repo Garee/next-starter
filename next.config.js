@@ -1,4 +1,5 @@
 // @ts-check
+// https://nextjs.org/docs/api-reference/next.config.js/introduction
 
 const withPWA = require("next-pwa");
 const runtimeCaching = require("next-pwa/cache");

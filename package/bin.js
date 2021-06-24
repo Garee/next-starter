@@ -1,5 +1,8 @@
 #! /usr/bin/env node
 
+// This script is run for:
+// $ npx @garyblackwood/next-starter my-app
+
 "use strict";
 
 const appName = process.argv[2] || "next-starter";

@@ -29,15 +29,18 @@ export default function Projects({
       <h1 className={utilStyles.headingXl}>{title}</h1>
       <p dangerouslySetInnerHTML={{ __html: description }}></p>
       <br />
-      <ul>
+      <ul className={utilStyles.list}>
         {projects.map((p) => (
-          <li key={p.id}>{p.title}</li>
+          <li className={utilStyles.listItem} key={p.id}>
+            {p.title}
+          </li>
         ))}
       </ul>
     </Layout>
   );
 }
 
+// Run on every request for the page.
 export const getServerSideProps: GetServerSideProps<ProjectsProps> =
   async () => {
     const contentDirectory = path.join(process.cwd(), "pages/content");

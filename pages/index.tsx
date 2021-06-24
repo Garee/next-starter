@@ -75,15 +75,12 @@ export default function Home({
 // Runs at build time in production.
 // Runs on each request in development mode.
 // Only runs server-side.
+
+// Get external data from the file system, API, DB etc.
+
+// API route calls cannot be made in getStaticProps as they fail during
+// production builds.
 export const getStaticProps: GetStaticProps<HomeProps> = async () => {
-  // Get external data from the file system, API, DB etc.
-
-  // API route calls cannot be made in getStaticProps as they fail during
-  // production builds.
-  /*const greeting = await fetch(`${server}/api/greeting`)
-    .then((res) => res.json())
-    .then((data) => data.greeting);*/
-
   const contentDirectory = path.join(process.cwd(), "pages/content");
   const about = fs.readFileSync(
     path.join(contentDirectory, "about.json"),
@@ -91,15 +88,5 @@ export const getStaticProps: GetStaticProps<HomeProps> = async () => {
   );
   const { greeting, description } = JSON.parse(about);
   const allPosts = await getSortedPostsData();
-
   return { props: { greeting, description, allPosts } };
 };
-
-// If a page uses Server-side Rendering, the page HTML is generated on
-// each request.
-/* export async function getServerSideProps() {
-  // Fetch data from external API
-  const res = await fetch(`https://.../data`)
-  const data = await res.json()
-  return { props: { data } }
-} */

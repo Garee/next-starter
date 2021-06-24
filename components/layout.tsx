@@ -1,9 +1,12 @@
+// https://nextjs.org/docs/api-reference/next/head
 import Head from "next/head";
 // https://nextjs.org/docs/basic-features/image-optimization#image-component
 import Image from "next/image";
+// https://nextjs.org/docs/api-reference/next/link
 import Link from "next/link";
+// https://github.com/JedWatson/classnames
 import cn from "classnames";
-import { appAuthor, appName } from "../lib/config";
+import { appAuthor, appDescription, appName, appSite } from "../lib/config";
 import styles from "./layout.module.scss";
 import utilStyles from "../styles/utils.module.scss";
 
@@ -22,9 +25,16 @@ export default function Layout({ children, home }: LayoutProps) {
     >
       <Head>
         <title>{appName}</title>
-        <meta name="description" content="The default description of a page." />
+        <meta name="description" content={appDescription} />
         <meta property="og:image" content="/icon.png" />
         <meta name="og:title" content={appName} />
+        <meta property="og:description" content="" />
+        <meta name="twitter:card" content="app" />
+        <meta name="twitter:site" content={appSite} />
+        <meta name="twitter:creator" content={appAuthor} />
+        <meta name="twitter:title" content={appName} />
+        <meta name="twitter:description" content={appDescription} />
+        <meta name="twitter:image" content="/icon.png" />
         <meta name="theme-color" content="#fafafa" />
         <link rel="manifest" href="/site.webmanifest" />
         <link rel="icon" href="/favicon.ico" />

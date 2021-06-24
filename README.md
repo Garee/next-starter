@@ -79,6 +79,21 @@ Run through this checklist to customise the application for your needs:
 - [ ] Update the contents of this file.
 - [ ] Start working on your application!
 
+## Directory Overview
+
+| Directory     | Description                                     |
+| ------------- | ----------------------------------------------- |
+| \_\_tests\_\_ | The Jest unit tests.                            |
+| .devcontainer | The development docker container configuration. |
+| .husky        | The git hooks scripts.                          |
+| components    | The app's reusable components.                  |
+| lib           | The app's service-like code.                    |
+| package       | Contains the package installation script.       |
+| pages         | The app's page components.                      |
+| posts         | The markdown files for each example blog post.  |
+| public        | Services static content from the root /.        |
+| styles        | The app's CSS.                                  |
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
