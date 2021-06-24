@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`indexPage renders correctly 1`] = `
+exports[`index page renders correctly 1`] = `
 <div
   className="container homeContainer"
 >
@@ -87,8 +87,34 @@ exports[`indexPage renders correctly 1`] = `
       <p>
         Hey 👋
       </p>
+      <p
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "",
+          }
+        }
+      />
       <p>
-        
+        Check out this
+         
+        <a
+          href="/projects"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          example page
+        </a>
+         
+        and the
+         
+        <a
+          href="/admin"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          CMS
+        </a>
+        .
       </p>
     </section>
     <section

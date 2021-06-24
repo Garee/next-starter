@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`post page renders correctly 1`] = `
+exports[`projects page renders correctly 1`] = `
 <div
   className="container"
 >
@@ -97,29 +97,17 @@ exports[`post page renders correctly 1`] = `
     <h1
       className="headingXl"
     >
-      Post #1
+      
     </h1>
-    <small
-      className="lightText"
-    >
-      <time
-        dateTime="2021-01-01"
-      >
-        January 1, 2021
-      </time>
-    </small>
-    <br />
-    <small>
-      ⭐⭐⭐
-    </small>
-    <br />
-    <div
+    <p
       dangerouslySetInnerHTML={
         Object {
-          "__html": "Sample content.",
+          "__html": "",
         }
       }
     />
+    <br />
+    <ul />
   </main>
   <div
     className="backToHome"

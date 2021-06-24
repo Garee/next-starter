@@ -16,29 +16,27 @@ import utilStyles from "../../styles/utils.module.scss";
 //
 // https://nextjs.org/docs/routing/introduction#dynamic-route-segments
 
-interface PostProps {
-  postData: PostData;
-}
+type PostProps = PostData;
 
-export default function Post({ postData }: PostProps) {
+export default function Post({ title, date, rating, content }: PostProps) {
   return (
     <Layout>
       <Head>
-        <title>{postData.title}</title>
+        <title>{title}</title>
       </Head>
-      <h1 className={utilStyles.headingXl}>{postData.title}</h1>
+      <h1 className={utilStyles.headingXl}>{title}</h1>
       <small className={utilStyles.lightText}>
-        <Date dateString={postData.date} />
+        <Date dateString={date} />
       </small>
       <br />
-      <small>{`⭐`.repeat(postData.rating)}</small>
+      <small>{`⭐`.repeat(rating)}</small>
       <br />
-      <div dangerouslySetInnerHTML={{ __html: postData.content }} />
+      <div dangerouslySetInnerHTML={{ __html: content }} />
     </Layout>
   );
 }
 
-export const getStaticProps: GetStaticProps<PostProps> = async ({
+export const getStaticProps: GetStaticProps<PostData> = async ({
   params,
 }: GetStaticPropsContext) => {
   let postData: PostData = {
@@ -54,9 +52,7 @@ export const getStaticProps: GetStaticProps<PostProps> = async ({
   }
 
   return {
-    props: {
-      postData,
-    },
+    props: postData,
   };
 };
 

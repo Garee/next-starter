@@ -32,7 +32,18 @@ export default function Home({
       </Head>
       <section className={utilStyles.headingMd}>
         <p>{greeting}</p>
-        <p>{description}</p>
+        <p dangerouslySetInnerHTML={{ __html: description }}></p>
+        <p>
+          Check out this{" "}
+          <Link href="/projects">
+            <a>example page</a>
+          </Link>{" "}
+          and the{" "}
+          <Link href="/admin">
+            <a>CMS</a>
+          </Link>
+          .
+        </p>
       </section>
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>Blog</h2>
@@ -73,7 +84,7 @@ export const getStaticProps: GetStaticProps<HomeProps> = async () => {
     .then((res) => res.json())
     .then((data) => data.greeting);*/
 
-  const contentDirectory = path.join(process.cwd(), "content");
+  const contentDirectory = path.join(process.cwd(), "pages/content");
   const about = fs.readFileSync(
     path.join(contentDirectory, "about.json"),
     "utf-8"

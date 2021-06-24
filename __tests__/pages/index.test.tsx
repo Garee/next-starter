@@ -2,7 +2,7 @@ import renderer from "react-test-renderer";
 import { render, screen } from "@testing-library/react";
 import Index from "../../pages/index";
 
-describe("indexPage", () => {
+describe("index page", () => {
   const allPosts = [
     {
       id: "1",
@@ -13,7 +13,8 @@ describe("indexPage", () => {
     },
   ];
 
-  const index = <Index greeting="Hey 👋" description="" allPosts={allPosts} />;
+  const props = { greeting: "Hey 👋", description: "", allPosts };
+  const index = <Index {...props} />;
 
   it("renders correctly", () => {
     expect.assertions(1);
