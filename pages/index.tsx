@@ -3,10 +3,12 @@ import path from "path";
 import Head from "next/head";
 import Link from "next/link";
 import { GetStaticProps } from "next";
+import { useEffect } from "react";
 import Layout from "../components/layout";
 import Date from "../components/date";
 import { getSortedPostsData, PostData } from "../lib/posts";
 import { appName } from "../lib/config";
+import { redirectToAdminOnLogin } from "../lib/netlify-identity";
 import utilStyles from "../styles/utils.module.scss";
 
 // A page is a React Component exported from a .js, .jsx, .ts, or .tsx file
@@ -25,6 +27,8 @@ export default function Home({
   description,
   allPosts,
 }: HomeProps): JSX.Element {
+  useEffect(() => redirectToAdminOnLogin(), []);
+
   return (
     <Layout home>
       <Head>
