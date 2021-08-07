@@ -1,7 +1,7 @@
 {
   "name": "@garyblackwood/next-starter",
   "description": "A starter template for Next.js web applications.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "Gary Blackwood <gary@garyblackwood.co.uk",
   "homepage": "https://github.com/Garee/next-starter",
   "repository": {
