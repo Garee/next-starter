@@ -19,10 +19,11 @@
     "next-starter": "./package/bin.js"
   },
   "scripts": {
-    "clean": "rm -rf .next",
+    "clean": "rm -rf .next out",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "export": "next export",
     "lint": "npm run lint-next && npm run lint-ts && npm run lint-styles",
     "lint-next": "next lint",
     "lint-styles": "stylelint **/*.scss",

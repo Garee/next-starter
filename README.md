@@ -67,7 +67,6 @@ npm run build
 Run through this checklist to customise the application for your needs:
 
 - [ ] Update the `name`, `description`, `homepage`, `repository`, `keywords` and `bugs` fields in `package.json`.
-- [ ] Remove the `package` directory and `bin` field from `package.json`.
 - [ ] Update site metadata within the `<Head>` component in `components/layout.tsx`.
 - [ ] Update the application configuration in `lib/config.ts`.
 - [ ] Update `name`, `short_name`, `theme_color` and `background_color` in `public/site.webmanifest`.
