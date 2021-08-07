@@ -13,8 +13,8 @@ const appDir = `${process.cwd()}/${appName}`;
 const url = "git@github.com:Garee/next-starter";
 spawnSync("git", ["clone", url, appName]);
 
-rimraf(`${appDir}/package`, {}, (err) => console.error(err));
-rimraf(`${appDir}/.git`, {}, (err) => console.error(err));
+rimraf(`${appDir}/package`, {}, (err) => err && console.error(err));
+rimraf(`${appDir}/.git`, {}, (err) => err && console.error(err));
 
 console.log("Ready, set, go!");
 console.log(`$ cd ${appName}`);
