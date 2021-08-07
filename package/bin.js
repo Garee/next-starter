@@ -7,12 +7,14 @@
 
 const appName = process.argv[2] || "next-starter";
 const { spawnSync } = require("child_process");
+const rimraf = require("rimraf");
 
+const appDir = `${process.cwd()}/${appName}`;
 const url = "git@github.com:Garee/next-starter";
-spawnSync("git", ["clone", url, `${process.cwd()}/${appName}`]);
+spawnSync("git", ["clone", url, appName]);
 
-spawnSync("rm", ["-rf", `${process.cwd()}/${appName}/package`]);
-spawnSync("rm", ["-rf", `${process.cwd()}/${appName}/.git`]);
+rimraf(`${appDir}/package`, {}, (err) => console.error(err));
+rimraf(`${appDir}/.git`, {}, (err) => console.error(err));
 
 console.log("Ready, set, go!");
 console.log(`$ cd ${appName}`);
