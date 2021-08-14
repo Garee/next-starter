@@ -31,7 +31,6 @@ exports[`index page renders correctly 1`] = `
         <img
           alt=""
           aria-hidden={true}
-          role="presentation"
           src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTQ0IiBoZWlnaHQ9IjE0NCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4="
           style={
             Object {
@@ -47,6 +46,7 @@ exports[`index page renders correctly 1`] = `
       <img
         alt="Gary Blackwood"
         className="borderCircle"
+        data-nimg={true}
         decoding="async"
         src="/_next/image?url=%2Fimages%2Favatar.jpg&w=384&q=75"
         srcSet="/_next/image?url=%2Fimages%2Favatar.jpg&w=256&q=75 1x, /_next/image?url=%2Fimages%2Favatar.jpg&w=384&q=75 2x"
