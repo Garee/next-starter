@@ -51,7 +51,7 @@ exports[`post page renders correctly 1`] = `
         <img
           alt="Gary Blackwood"
           className="borderCircle"
-          data-nimg={true}
+          data-nimg="intrinsic"
           decoding="async"
           src="/_next/image?url=%2Fimages%2Favatar.jpg&w=256&q=75"
           srcSet="/_next/image?url=%2Fimages%2Favatar.jpg&w=128&q=75 1x, /_next/image?url=%2Fimages%2Favatar.jpg&w=256&q=75 2x"
@@ -78,6 +78,39 @@ exports[`post page renders correctly 1`] = `
             }
           }
         />
+        <noscript>
+          <img
+            alt="Gary Blackwood"
+            className="borderCircle"
+            data-nimg="intrinsic"
+            decoding="async"
+            loading="lazy"
+            src="/_next/image?url=%2Fimages%2Favatar.jpg&w=256&q=75"
+            srcSet="/_next/image?url=%2Fimages%2Favatar.jpg&w=128&q=75 1x, /_next/image?url=%2Fimages%2Favatar.jpg&w=256&q=75 2x"
+            style={
+              Object {
+                "border": "none",
+                "bottom": 0,
+                "boxSizing": "border-box",
+                "display": "block",
+                "height": 0,
+                "left": 0,
+                "margin": "auto",
+                "maxHeight": "100%",
+                "maxWidth": "100%",
+                "minHeight": "100%",
+                "minWidth": "100%",
+                "objectFit": undefined,
+                "objectPosition": undefined,
+                "padding": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+                "width": 0,
+              }
+            }
+          />
+        </noscript>
       </div>
     </a>
     <h2
